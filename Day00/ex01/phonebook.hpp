@@ -13,6 +13,9 @@
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
+# include <cstdlib>
+# include <iostream>
+# include <iomanip>
 # include "Contact.hpp"
 
 # define MAX_CONTACT 8
