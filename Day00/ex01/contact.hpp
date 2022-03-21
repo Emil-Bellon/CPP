@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   contact.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ebellon <ebellon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 15:29:23 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/20 15:29:23 by marvin           ###   ########.fr       */
+/*   Created: 2022/03/21 13:56:08 by ebellon           #+#    #+#             */
+/*   Updated: 2022/03/21 13:56:08 by ebellon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,17 +17,17 @@
 # include <iostream>
 # include <iomanip>
 
-class contact
+class Contact
 {
 	public :
 
-		contact(void);
-		~contact(void);
+		Contact(void);
+		~Contact(void);
 
-		void	set_contact_info(std::string _firstName, std::string _lastName,
+		void	setContactInfo(std::string _firstName, std::string _lastName,
 			std::string _nickname, std::string _phoneNumber, std::string _darkestSecret);
-		void	print_contact(void) const;
-		void	print_contact_preview(void) const;
+		void	printContact(void) const;
+		void	printContactPreview(void) const;
 
 	private:
 

@@ -1,7 +1,7 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   Phonebook.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
@@ -10,27 +10,26 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef PHONEBOOK_H
 # define PHONEBOOK_H
 
-# include "contact.hpp"
+# include "Contact.hpp"
 
 # define MAX_CONTACT 8
 
-class phonebook
+class Phonebook
 {
 	public :
 
-		phonebook(void);
-		~phonebook(void);
+		Phonebook(void);
+		~Phonebook(void);
 
 		void		add(void);
 		void		search(void) const;
 
 	private:
 
-		contact		_contacts[MAX_CONTACT];
+		Contact		_contacts[MAX_CONTACT];
 		size_t		_nbContacts;
 		size_t		_idContact;
 

@@ -3,21 +3,21 @@
 /*                                                        :::      ::::::::   */
 /*   phonebook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ebellon <ebellon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 16:14:00 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/20 16:14:00 by marvin           ###   ########.fr       */
+/*   Created: 2022/03/21 13:54:56 by ebellon           #+#    #+#             */
+/*   Updated: 2022/03/21 13:54:56 by ebellon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
-phonebook::phonebook(void) : _nbContacts(0), _idContact(0)
+Phonebook::Phonebook(void) : _nbContacts(0), _idContact(0)
 {
     return;
 }
 
-phonebook::~phonebook(void)
+Phonebook::~Phonebook(void)
 {
     return;
 }
@@ -42,7 +42,7 @@ std::string	get_valid_field(std::string fieldInputMessage)
 	return (usr_input);
 }
 
-void	phonebook::add(void)
+void	Phonebook::add(void)
 {
 	std::string	firstName;
 	std::string	lastName;
@@ -61,14 +61,14 @@ void	phonebook::add(void)
 	if (firstName.empty() || lastName.empty() || nickname.empty() || phoneNumber.empty() | darkestSecret.empty())
 		return;
 	std::cout << std::endl;
-	this->_contacts[this->_idContact].set_contact_info(firstName, lastName, nickname, phoneNumber, darkestSecret);
+	this->_contacts[this->_idContact].setContactInfo(firstName, lastName, nickname, phoneNumber, darkestSecret);
 	if (_nbContacts < MAX_CONTACT)
 		this->_nbContacts += 1;
 	this->_idContact += 1;
 	return;
 }
 
-void	phonebook::_printPhonebook(void) const
+void	Phonebook::_printPhonebook(void) const
 {
 
 	size_t	i = 0;
@@ -78,7 +78,7 @@ void	phonebook::_printPhonebook(void) const
 	{
 		std::cout << "|──────────|──────────|──────────|──────────|" << std::endl;
 		std::cout << "|" << std::setw(10) << i << "|";
-		this->_contacts[i].print_contact_preview();
+		this->_contacts[i].printContactPreview();
 		std::cout << std::endl;
 		i++;
 	}
@@ -87,7 +87,7 @@ void	phonebook::_printPhonebook(void) const
 	return;
 }
 
-void	phonebook::search(void) const
+void	Phonebook::search(void) const
 {
 	std::string	usr_input;
 
@@ -110,6 +110,6 @@ void	phonebook::search(void) const
 		if (!std::cin.good())
 			return;
 	}
-	this->_contacts[(size_t)(usr_input.at(0) - '0')].print_contact();
+	this->_contacts[(size_t)(usr_input.at(0) - '0')].printContact();
 	return;
 }

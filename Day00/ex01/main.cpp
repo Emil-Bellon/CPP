@@ -3,18 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ebellon <ebellon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 15:27:18 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/20 15:27:18 by marvin           ###   ########.fr       */
+/*   Created: 2022/03/21 13:55:54 by ebellon           #+#    #+#             */
+/*   Updated: 2022/03/21 13:55:54 by ebellon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "phonebook.hpp"
+#include "Phonebook.hpp"
 
 int	main(void)
 {
-	phonebook	phoneBook;
+	Phonebook	phonebook;
 	std::string	usr_input;
 
 	std::getline(std::cin, usr_input);
@@ -23,9 +23,9 @@ int	main(void)
 	while (usr_input.compare("EXIT"))
 	{
 		if (!usr_input.compare("ADD"))
-			phoneBook.add();
+			phonebook.add();
 		else if (!usr_input.compare("SEARCH"))
-			phoneBook.search();
+			phonebook.search();
 		std::getline(std::cin, usr_input);
 		if (!std::cin.good())
 			return 1;

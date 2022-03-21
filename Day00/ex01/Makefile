@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: marvin <marvin@student.42.fr>              +#+  +:+       +#+         #
+#    By: ebellon <ebellon@student.42lyon.fr>        +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/03/16 17:22:00 by ebellon           #+#    #+#              #
-#    Updated: 2022/03/20 17:33:18 by marvin           ###   ########.fr        #
+#    Updated: 2022/03/21 13:55:47 by ebellon          ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,12 +14,12 @@ NAME		=	phonebook
 
 PATH_OBJ	=	obj/
 
-SRC			= 	phonebook.cpp \
-				contact.cpp \
+SRC			= 	Phonebook.cpp \
+				Contact.cpp \
 				main.cpp
 
-INC			=	contact.hpp \
-				phonebook.hpp
+INC			=	Contact.hpp \
+				Phonebook.hpp
 
 OBJ			=	$(addprefix $(PATH_OBJ), $(SRC:.cpp=.o))
 

@@ -3,26 +3,26 @@
 /*                                                        :::      ::::::::   */
 /*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
+/*   By: ebellon <ebellon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 15:46:56 by marvin            #+#    #+#             */
-/*   Updated: 2022/03/20 15:46:56 by marvin           ###   ########.fr       */
+/*   Created: 2022/03/21 13:56:17 by ebellon           #+#    #+#             */
+/*   Updated: 2022/03/21 13:56:17 by ebellon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "contact.hpp"
+#include "Contact.hpp"
 
-contact::contact(void)
+Contact::Contact(void)
 {
 	return;
 }
 
-contact::~contact(void)
+Contact::~Contact(void)
 {
 	return;
 }
 
-void	contact::set_contact_info(std::string firstName, std::string lastName,
+void	Contact::setContactInfo(std::string firstName, std::string lastName,
 	std::string nickname, std::string phoneNumber, std::string darkestSecret)
 {
 	this->_firstName = firstName;
@@ -33,7 +33,7 @@ void	contact::set_contact_info(std::string firstName, std::string lastName,
 	return;
 }
 
-void	contact::print_contact(void) const
+void	Contact::printContact(void) const
 {
 	std::cout << std::endl << "	First name : " + this->_firstName << std::endl;
 	std::cout << "	Last name : " + this->_lastName << std::endl;
@@ -43,7 +43,7 @@ void	contact::print_contact(void) const
 	return;
 }
 
-void	contact::print_contact_preview(void) const
+void	Contact::printContactPreview(void) const
 {
 	if (this->_firstName.size() > 10)
 		std::cout << this->_firstName.substr(0, 9) + "." << "|";
