@@ -6,7 +6,7 @@
 /*   By: ebellon <ebellon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/22 11:15:35 by ebellon           #+#    #+#             */
-/*   Updated: 2022/03/22 11:43:56 by ebellon          ###   ########lyon.fr   */
+/*   Updated: 2022/03/22 11:52:52 by ebellon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,11 +44,6 @@ int main(int ac, char **av)
 		std::cout << "Usage : ./GodlikeSed filename to_replace substitute" << std::endl;
 		return (1);
 	}
-
-	std::ifstream		ifs;
-	std::ofstream		ofs;
-	if (!open_files(ifs, ofs, av[1]))
-		return (1);
 	
 	std::string			to_replace = av[2];
 	std::string			substitute = av[3];
@@ -57,6 +52,12 @@ int main(int ac, char **av)
 		std::cout << "Args should not be empty" << std::endl;
 		return (1);
 	}
+
+	std::ifstream		ifs;
+	std::ofstream		ofs;
+	if (!open_files(ifs, ofs, av[1]))
+		return (1);
+	
 	std::stringstream	buf;
 	buf << ifs.rdbuf();
 	std::string			haystack = buf.str();
