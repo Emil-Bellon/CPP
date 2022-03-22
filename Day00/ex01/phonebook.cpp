@@ -102,7 +102,7 @@ void	Phonebook::search(void) const
 	if (!std::cin.good())
 		return;
 	while (usr_input.empty() || usr_input.size() != 1
-		|| (size_t)(usr_input.at(0) - '0') < 0 || (size_t)(usr_input.at(0) - '0') > this->_nbContacts
+		|| (size_t)(usr_input.at(0) - '0') < 0 || (size_t)(usr_input.at(0) - '0') >= this->_nbContacts
 		|| (size_t)(usr_input.at(0) - '0') > MAX_CONTACT - 1)
 	{
 		std::cout << "Please input an index that fit in the list printed." << std::endl << "Input index contact needed : ";
