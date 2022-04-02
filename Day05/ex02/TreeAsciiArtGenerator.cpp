@@ -122,7 +122,7 @@ void	TreeGenerator(std::ostream & ofs, int seed, int n_iter, int n_branch, int *
 	}
 
 	std::string	line;
-	line.resize(n_iter * 2, ' ');
+	line.resize(25 * 2, ' ');
 	line.push_back('\n');
 
 	if (n == 0) /* grow trunk */
@@ -145,15 +145,29 @@ void	TreeGenerator(std::ostream & ofs, int seed, int n_iter, int n_branch, int *
 	return;
 }
 
-int main(void)
+void	grow(int time_grow)
 {
-	srand(time(NULL));
-	for(int i = 0; i < 60; i++)
+	time_t	t_seed = time(NULL);
+	for(int i = 0; i < time_grow; i++)
 	{
 		std::chrono::milliseconds timespan(1000);
 		std::this_thread::sleep_for(timespan);
 		std::cout << "\033[H\033[2J";
-		TreeGenerator(std::cout, rand() % 30 + 5, 20, 0, NULL);
+		srand(t_seed);
+		TreeGenerator(std::cout, rand() % 30 + 5, i, 0, NULL);
 	}
+}
+
+int main(void)
+{
+	// srand(time(NULL));
+	// for(int i = 0; i < 60; i++)
+	// {
+	// 	std::chrono::milliseconds timespan(1000);
+	// 	std::this_thread::sleep_for(timespan);
+	// 	std::cout << "\033[H\033[2J";
+	// 	TreeGenerator(std::cout, rand() % 30 + 5, 20, 0, NULL);
+	// }
+	grow(25);
 	return (0);
 }
