@@ -25,6 +25,7 @@ int		main(void)
 		palpatine.signForm(robotomy);
 		palpatine.executeForm(robotomy);
 		palpatine.promote();
+		std::cout << "palpatine has been promoted." << std::endl;
 		palpatine.executeForm(robotomy);
 		palpatine.demote();
 	} catch (std::exception &e) {
@@ -48,6 +49,7 @@ int		main(void)
 		Dwight.executeForm(pardon);
 		std::cout << Dwight.getName() << " is horrified that he couldn't exec that form, he's going to pledge for promotion !" << std::endl;
 		Dwight.promote();
+		std::cout << "Dwight has been promoted." << std::endl;
 		Dwight.executeForm(pardon);
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
