@@ -1,8 +1,7 @@
 #include <iostream>
 #include <ctime>
 #include <cstdlib>
-#include <chrono>
-#include <thread>
+#include <unistd.h>
 #include <fstream>
 #include <sstream>
 #include <string.h>
@@ -73,7 +72,7 @@ int	GetRandGrowState(bool do_leaves, int n, int n_iter)
 	}
 }
 
-void	RandGrow(int id_seed, std::string & line, int n, int n_iter, bool do_leaves)
+void	RandGrow(long int id_seed, std::string & line, int n, int n_iter, bool do_leaves)
 {
 	int	grow_state = GetRandGrowState(do_leaves, n, n_iter);
 	/*
@@ -94,14 +93,14 @@ void	RandGrow(int id_seed, std::string & line, int n, int n_iter, bool do_leaves
 			break;
 
 		case 2:
-			if (id_seed + 1 < line.size() - 1)
+			if (id_seed + 1 < 50)
 				line.replace(id_seed + 1, 1, "/");
 			break;
 
 		case 3:
 			if (id_seed - 1 >= 0)
 				line.replace(id_seed - 1, 1, "\\");
-			if (id_seed + 1 < line.size() - 1)
+			if (id_seed + 1 < 50)
 				line.replace(id_seed + 1, 1, "/");
 			break;
 
@@ -109,7 +108,7 @@ void	RandGrow(int id_seed, std::string & line, int n, int n_iter, bool do_leaves
 			line.replace(id_seed, 1, "#");
 			if (id_seed - 1 >= 0)
 				line.replace(id_seed - 1, 1, "#");
-			if (id_seed + 1 < line.size() - 1)
+			if (id_seed + 1 < 50)
 				line.replace(id_seed + 1, 1, "#");
 			break;
 	}
@@ -125,7 +124,7 @@ void	TreeGenerator(std::ostream & ofs, int seed, int n_iter, int n_branch, int *
 	}
 
 	std::string	line;
-	line.resize(25 * 2, ' ');
+	line.resize(50, ' ');
 	line.push_back('\n');
 
 	if (n == 0) /* grow trunk */
@@ -153,8 +152,9 @@ void	grow(int time_grow, std::ofstream & ofs)
 	time_t	t_seed = time(NULL);
 	for(int i = 0; i < time_grow; i++)
 	{
-		std::chrono::milliseconds timespan(1000);
-		std::this_thread::sleep_for(timespan);
+		// std::chrono::milliseconds timespan(1000);
+		// std::this_thread::sleep_for(timespan);
+		usleep(1000000);
 		std::cout << "\033[H\033[2J";
 		if (i < time_grow - 1)
 			std::cout << "Shrubbery growing please wait (remaining time : " << time_grow - (i + 1) << " s.)" << std::endl;
@@ -166,20 +166,20 @@ void	grow(int time_grow, std::ofstream & ofs)
 	std::cout << "Shrubbery fully grown !" << std::endl;
 }
 
-int main(void)
-{
-	srand(time(NULL));
-	// for(int i = 0; i < 60; i++)
-	// {
-	// 	std::chrono::milliseconds timespan(1000);
-	// 	std::this_thread::sleep_for(timespan);
-	// 	std::cout << "\033[H\033[2J";
-	// 	TreeGenerator(std::cout, rand() % 30 + 5, 20, 0, NULL);
-	// }
-	std::ofstream	ofs;
-	ofs.open("tree.txt", std::ios_base::out | std::ios_base::trunc);
-	// TreeGenerator(ofs, rand() % 30 + 5, 25, 0, NULL);
-	grow(25, ofs);
-	ofs.close();
-	return (0);
-}
+// int main(void)
+// {
+// 	srand(time(NULL));
+// 	// for(int i = 0; i < 60; i++)
+// 	// {
+// 	// 	std::chrono::milliseconds timespan(1000);
+// 	// 	std::this_thread::sleep_for(timespan);
+// 	// 	std::cout << "\033[H\033[2J";
+// 	// 	TreeGenerator(std::cout, rand() % 30 + 5, 20, 0, NULL);
+// 	// }
+// 	std::ofstream	ofs;
+// 	ofs.open("tree.txt", std::ios_base::out | std::ios_base::trunc);
+// 	// TreeGenerator(ofs, rand() % 30 + 5, 25, 0, NULL);
+// 	grow(25, ofs);
+// 	ofs.close();
+// 	return (0);
+// }

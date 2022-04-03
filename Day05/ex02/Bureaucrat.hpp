@@ -3,7 +3,7 @@
 
 # include <iostream>
 class Bureaucrat;
-# include "Form.hpp"
+# include "AForm.hpp"
 
 class	Bureaucrat
 {
@@ -35,7 +35,8 @@ class	Bureaucrat
 
 		void	promote(void);
 		void	demote(void);
-		void	signForm(Form & form) const;
+		void	signForm(AForm & form) const;
+		void	executeForm(AForm const & form) const;
 
 	private :
 

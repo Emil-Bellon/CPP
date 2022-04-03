@@ -89,7 +89,7 @@ void	Bureaucrat::demote(void)
 	return;
 }
 
-void	Bureaucrat::signForm(Form & form) const
+void	Bureaucrat::signForm(AForm & form) const
 {
 	try
 	{
@@ -99,6 +99,21 @@ void	Bureaucrat::signForm(Form & form) const
 	catch(std::exception& e)
 	{
 		std::cout << this->_name << " couldn't sign " << form.getName() << " because ";
+		std::cout << e.what() << std::endl;
+	}
+	return;
+}
+
+void	Bureaucrat::executeForm(AForm const & form) const
+{
+	try
+	{
+		form.execute(*this);
+		std::cout << this->_name << " executed " << form.getName() << std::endl;
+	}
+	catch(std::exception& e)
+	{
+		std::cout << this->_name << " couldn't execute " << form.getName() << " because ";
 		std::cout << e.what() << std::endl;
 	}
 	return;
