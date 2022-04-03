@@ -21,6 +21,7 @@ class Intern
 		AForm *	makeForm(std::string formName, std::string target) const;
 
 	private:
+		
 		std::string	_tabForm[3];
 };
 
