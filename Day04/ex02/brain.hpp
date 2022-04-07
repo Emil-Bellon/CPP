@@ -1,5 +1,5 @@
 #ifndef BRAIN_HPP
-# define BARIN_HPP
+# define BRAIN_HPP
 
 # include <iostream>
 
