@@ -7,6 +7,7 @@
 
 int	main(void)
 {
+	{
 	Animal*	animalPack[50];
 	
 	for( size_t i = 0; i < 25; i++ )
@@ -15,5 +16,13 @@ int	main(void)
 		animalPack[i] = new Cat();
 	for( size_t i = 0; i < 50; i++ )
 		delete( animalPack[i] );
+	}
+	{
+	std::cout << std::endl << std::endl;
+	Dog basic;
+	{
+	Dog tmp = basic;
+	}
+	}
 	return 0;
 }
