@@ -6,7 +6,7 @@
 /*   By: ebellon <ebellon@student.42lyon.fr>        +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/08 18:17:42 by ebellon           #+#    #+#             */
-/*   Updated: 2022/04/08 18:40:53 by ebellon          ###   ########lyon.fr   */
+/*   Updated: 2022/04/08 19:29:40 by ebellon          ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int main(int ac, char **av)
 		else
 			nb = atof(input.c_str());
 
-		/* Print char */
+		/* char */
 
 		if ((atoi(input.c_str()) == 0 && input.length() > 1 ) || nb > std::numeric_limits<char>::max()
 			|| nb < std::numeric_limits<char>::min())
@@ -37,14 +37,14 @@ int main(int ac, char **av)
 		else
 			std::cout << "char: '" << static_cast<char>(nb) << "'" << std::endl;
 
-		/* Print int */
+		/* int */
 
 		if (nb != nb || nb < std::numeric_limits<int>::min() || nb > std::numeric_limits<int>::max())
 			std::cout << "int: impossible" << std::endl;
 		else
 			std::cout << "int: " << static_cast<int>(nb) << std::endl;
 
-		/* Print float */
+		/* float */
 
 		if (nb < 0 && nb < std::numeric_limits<float>::min())
 			std::cout << "float: -inff" << std::endl;
@@ -55,7 +55,7 @@ int main(int ac, char **av)
 		else
 				std::cout << "float: " << static_cast<float>(nb) << "f" << std::endl;
 
-		/* Print double */
+		/* double */
 
 		if (nb < 0 && nb < std::numeric_limits<double>::min())
 			std::cout << "float: -inf" << std::endl;
