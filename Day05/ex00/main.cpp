@@ -3,40 +3,48 @@
 
 int		main(void)
 {
-	try {
-		Bureaucrat gerard("Bob", 149);
-		std::cout << gerard << std::endl;
-		gerard.demote();
-		std::cout << gerard << std::endl;
-		gerard.demote();
-		std::cout << gerard << std::endl;
+	try
+	{
+		Bureaucrat bob("Bob", 149);
+		std::cout << bob << std::endl;
+		bob.demote();
+		std::cout << bob << std::endl;
+		bob.demote();
+		std::cout << bob << std::endl;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	try {
-		Bureaucrat george("Henry", 152);
-		std::cout << george << std::endl;
+
+	try
+	{
+		Bureaucrat henry("Henry", 152);
+		std::cout << henry << std::endl;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	try {
-		Bureaucrat andre("Dylan", 2);
-		std::cout << andre << std::endl;
-		andre.promote();
-		std::cout << andre << std::endl;
-		andre.promote();
-		std::cout << andre << std::endl;
+
+	try
+	{
+		Bureaucrat dylan("Dylan", 2);
+		std::cout << dylan << std::endl;
+		dylan.promote();
+		std::cout << dylan << std::endl;
+		dylan.promote();
+		std::cout << dylan << std::endl;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	try {
-		Bureaucrat marie("Quatre", 0);
+
+	try
+	{
+		Bureaucrat marie("marie", 0);
 		std::cout << marie << std::endl;
 	} catch (std::exception &e) {
 		std::cout << e.what() << std::endl;
 	}
+
 	return (0);
 }

@@ -30,7 +30,7 @@ RobotomyRequestForm::~RobotomyRequestForm(void)
 
 RobotomyRequestForm &	RobotomyRequestForm::operator=(RobotomyRequestForm const & rhs)
 {
-	*this = rhs;
+	(void)rhs;
 	return *this;
 }
 

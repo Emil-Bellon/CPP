@@ -8,7 +8,8 @@
 
 int		main(void)
 {
-	try {
+	try
+	{
 		Bureaucrat Dwight("Dwight", 120);
 
 		ShrubberyCreationForm shrubbery("salon");
@@ -18,7 +19,9 @@ int		main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	try {
+
+	try
+	{
 		Bureaucrat palpatine("Palpatine", 46);
 
 		RobotomyRequestForm robotomy("Darth Vader");
@@ -32,7 +35,9 @@ int		main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	try {
+
+	try
+	{
 		Bureaucrat god("God", 1);
 
 		PresidentialPardonForm pardon("Satan");
@@ -42,7 +47,9 @@ int		main(void)
 		std::cout << e.what() << std::endl;
 	}
 	std::cout << std::endl;
-	try {
+
+	try
+	{
 		Bureaucrat Dwight("Dwight", 6);
 
 		PresidentialPardonForm pardon("Jim");

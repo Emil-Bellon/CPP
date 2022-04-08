@@ -12,11 +12,11 @@ class RobotomyRequestForm : public AForm
 		RobotomyRequestForm(std::string target);
 		RobotomyRequestForm(RobotomyRequestForm const & src);
 
-		~RobotomyRequestForm(void);
+		virtual ~RobotomyRequestForm(void);
 
 		RobotomyRequestForm &		operator=(RobotomyRequestForm const & rhs);
 		
-		void		launch(void) const;
+		virtual void		launch(void) const;
 
 	private:
 	

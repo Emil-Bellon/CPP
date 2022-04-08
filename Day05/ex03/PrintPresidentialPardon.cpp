@@ -9,18 +9,25 @@ void PrintPresidentialPardon(std::string const & target)
 	std::ifstream		ifs;
 	std::stringstream	buf;
 	
-	ifs.open("Presidential_Pardon_Letter.txt", std::ios_base::in);
-	buf << ifs.rdbuf();
-	std::string			haystack = buf.str();
-	std::string			to_find = "trget";
-	
-	size_t				i = 0;
-	while ((i = haystack.find(to_find, i)) != std::string::npos)
+	try
 	{
-		haystack.erase(i, to_find.size());
-		haystack.insert(i, target);
-		i += target.size();
+		ifs.open("Presidential_Pardon_Letter.txt", std::ios_base::in);
+		buf << ifs.rdbuf();
+		std::string			haystack = buf.str();
+		std::string			to_find = "trget";
+		
+		size_t				i = 0;
+		while ((i = haystack.find(to_find, i)) != std::string::npos)
+		{
+			haystack.erase(i, to_find.size());
+			haystack.insert(i, target);
+			i += target.size();
+		}
+		std::cout << haystack;
+		ifs.close();
 	}
-	std::cout << haystack;
-	ifs.close();
+	catch(std::exception& e)
+	{
+		std::cout << e.what() << std::endl;
+	}
 }

@@ -30,7 +30,7 @@ PresidentialPardonForm::~PresidentialPardonForm(void)
 
 PresidentialPardonForm &	PresidentialPardonForm::operator=(PresidentialPardonForm const & rhs)
 {
-	*this = rhs;
+	(void)rhs;
 	return *this;
 }
 

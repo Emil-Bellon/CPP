@@ -29,7 +29,7 @@ ShrubberyCreationForm::~ShrubberyCreationForm(void)
 
 ShrubberyCreationForm &	ShrubberyCreationForm::operator=(ShrubberyCreationForm const & rhs)
 {
-	*this = rhs;
+	(void)rhs;
 	return *this;
 }
 

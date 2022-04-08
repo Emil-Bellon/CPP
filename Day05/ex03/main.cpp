@@ -19,5 +19,5 @@ int		main(void)
 	delete form;
 	form = someRandomIntern.makeForm("world peace request", "World");
 	delete form;
-	return (EXIT_SUCCESS);
+	return (0);
 }

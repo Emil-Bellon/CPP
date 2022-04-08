@@ -7,7 +7,7 @@ Bureaucrat::Bureaucrat(void) /* not usable (Coplien form asked by subject) */
 	return;
 }
 
-Bureaucrat::Bureaucrat(std::string const name, unsigned short grade) : _name(name)
+Bureaucrat::Bureaucrat(std::string const name, unsigned short grade) : _name(name), _grade(150)
 {
 	if (grade > 150)
 		throw (Bureaucrat::GradeTooLowException());
