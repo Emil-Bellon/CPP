@@ -51,9 +51,9 @@ int	main()
 		arrayFloat2[i] = i + 1.5;
 		arrayString2[i] = i + 97;
 
-		std::cout << "arrayInt2 = " << arrayInt2[i] << std::endl;
-		std::cout << "arrayFloat2 = " << arrayFloat2[i] << std::endl;
-		std::cout << "arrayString2 = " << arrayString2[i] << std::endl;
+		std::cout << "arrayInt2[" << i << "] = " << arrayInt2[i] << std::endl;
+		std::cout << "arrayFloat2[" << i << "] = " << arrayFloat2[i] << std::endl;
+		std::cout << "arrayString2[" << i << "] = " << arrayString2[i] << std::endl;
 		std::cout << std::endl;
 	}
 

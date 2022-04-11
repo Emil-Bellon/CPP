@@ -76,7 +76,7 @@ void	Span::addNumber(int nb)
 	if (this->_vector.size() >= this->_n)
 		throw SpanFullException();
 		
-	this->_vector.insert(this->_vector.end(), nb);
+	this->_vector.push_back(nb);
 }
 
 void	Span::addNumber(std::vector<int> vec)

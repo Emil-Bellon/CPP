@@ -19,28 +19,42 @@ class Array
 {
 	public:
 		Array():				_array(NULL), _len(0)		{};
-		Array(unsigned int n):	_array(new T[n]), _len(n)	{};
-		Array(Array const &src)								{*this = src;};
+		Array(unsigned int n):	_array(new T[n]()), _len(n)	{};
+		Array(Array const &src)
+		{
+			if (this != &src)
+			{
+				const size_t s = src.size();
+				if (s > 0)
+				{
+					this->_array = new T[s];
+					for (size_t i = 0 ; i < s ; i++)
+						this->_array[i] = src[i];
+				}
+				else
+					this->_array = NULL;
+				this->_len = s;
+			}
+		};
 
-		virtual	~Array()									{delete [] _array;};
+		~Array()											{delete [] _array;};
 
 		Array	&operator=(Array const & rhs)
 		{
-			/* test at 42 school */
 			if (this->_array)
 				delete [] this->_array;
 			this->_len = rhs._len;
 			this->_array = new T[rhs._len];
 			for (unsigned int i = 0; i < this->_len; i++)
-				this->_array[i] = rhs._array[i];
+				this->_array[i] = rhs[i];
 			return *this;
 		};
 
-		T	&operator[](int index) const
+		T	&operator[](unsigned int index) const
 		{
-			if (index < 0 || index >= static_cast<int>(_len))
+			if (index < 0 || index >= this->_len || !this->_array)
 				throw IndexOutOfBoundsException();
-			return _array[index];
+			return this->_array[index];
 		};
 
 		class IndexOutOfBoundsException : public std::exception

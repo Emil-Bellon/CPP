@@ -60,5 +60,17 @@ int main(void)
 			std::cerr << e.what() << " " << needle << std::endl;
 		}
 	}
+	{
+		std::list<char>		tab;
+		char				needle;
+
+		needle = 'f';		
+		try {
+			std::cout << static_cast<char>(easyfind(tab, needle)) << std::endl;
+		}
+		catch(const std::exception& e) {
+			std::cerr << e.what() << std::endl;
+		}
+	}
 	return (0);
 }
