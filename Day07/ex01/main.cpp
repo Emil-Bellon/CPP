@@ -39,7 +39,7 @@ int main()
 	std::string	strings[3] = { "Coucou", "Maman", "Bobo" };
 
 	std::cout << "Print numbers:" << std::endl;
-	iter<int>(numbers, 5, &output);
+	iter(numbers, 5, &output);
 	std::cout << std::endl;
 
 	std::cout << "Print first 3 numbers:" << std::endl;

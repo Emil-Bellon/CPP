@@ -30,7 +30,7 @@ class Span
 		Span(unsigned int N);
 		Span(Span const &src);
 
-		virtual ~Span();
+		~Span();
 
 		Span	&operator=(Span const &src);
 

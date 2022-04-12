@@ -38,6 +38,7 @@ Span	&Span::operator=(Span const &src)
 {
 	this->_n = src._n;
 	this->_vector.clear();
+	this->_vector.reserve(src._n);
 	this->_vector.insert(this->_vector.begin(), src._vector.begin(), src._vector.end());
 	return *this;
 }

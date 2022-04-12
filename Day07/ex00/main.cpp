@@ -18,12 +18,12 @@ class Awesome {
 
 		Awesome( int n ) : _n( n ) {}
 
-		bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
-		bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
-		bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
-		bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
-		bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
-		bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
+		// bool operator==( Awesome const & rhs ) { return (this->_n == rhs._n); }
+		// bool operator!=( Awesome const & rhs ) { return (this->_n != rhs._n); }
+		// bool operator>( Awesome const & rhs ) { return (this->_n > rhs._n); }
+		// bool operator<( Awesome const & rhs ) { return (this->_n < rhs._n); }
+		// bool operator>=( Awesome const & rhs ) { return (this->_n >= rhs._n); }
+		// bool operator<=( Awesome const & rhs ) { return (this->_n <= rhs._n); }
 		/* const */
 		bool operator==( Awesome const & rhs ) const { return (this->_n == rhs._n); }
 		bool operator!=( Awesome const & rhs ) const { return (this->_n != rhs._n); }
